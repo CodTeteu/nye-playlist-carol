@@ -119,12 +119,8 @@ const Index = () => {
             Sugestões de Músicas
           </h2>
 
-          <p className="text-muted-foreground max-w-md mx-auto mb-2">
+          <p className="text-muted-foreground max-w-md mx-auto">
             Ajude a criar a trilha sonora perfeita para nossa virada de ano!
-          </p>
-
-          <p className="text-gold font-medium text-lg">
-            🎉 Essa playlist vai tocar na virada do ano na casa da Carol! 🎉
           </p>
         </header>
 
