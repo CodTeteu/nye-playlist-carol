@@ -71,13 +71,20 @@ const Index = () => {
   };
 
   const handleRemoveSong = async (id: string) => {
+    // Optimistic update - remove immediately from UI
+    setSongs((prev) => prev.filter((s) => s.id !== id));
+
     try {
       const { error } = await supabase
         .from('songs')
         .delete()
         .eq('id', id);
 
-      if (error) throw error;
+      if (error) {
+        // If error, refetch to restore the song
+        fetchSongs();
+        throw error;
+      }
 
       toast.info("Música removida");
     } catch (error) {
