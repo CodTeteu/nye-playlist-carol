@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 43 30% 96%;
+    --foreground: 35 40% 20%;
+
+    --card: 43 40% 98%;
+    --card-foreground: 35 40% 20%;
+
+    --popover: 43 40% 98%;
+    --popover-foreground: 35 40% 20%;
+
+    --primary: 43 80% 50%;
+    --primary-foreground: 43 30% 96%;
+
+    --secondary: 43 30% 90%;
+    --secondary-foreground: 35 40% 20%;
+
+    --muted: 43 20% 92%;
+    --muted-foreground: 35 20% 50%;
+
+    --accent: 43 70% 55%;
+    --accent-foreground: 35 40% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 43 30% 85%;
+    --input: 43 30% 90%;
+    --ring: 43 80% 50%;
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased overflow-x-hidden;
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-sans {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(43, 80%, 50%), hsl(43, 85%, 40%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-gold {
+    background: linear-gradient(135deg, hsl(43, 80%, 50%), hsl(43, 85%, 40%));
+  }
+
+  .shadow-gold {
+    box-shadow: 0 4px 20px hsl(43 80% 50% / 0.25);
+  }
+
+  .shadow-card {
+    box-shadow: 0 8px 32px hsl(35 40% 20% / 0.08);
+  }
+
+  /* Glass effect for light mode */
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-white/50 shadow-lg;
+  }
+
+  /* Animation delays */
+  .del-100 {
+    animation-delay: 100ms;
+  }
+
+  .del-200 {
+    animation-delay: 200ms;
+  }
+
+  .del-300 {
+    animation-delay: 300ms;
+  }
+
+  .del-400 {
+    animation-delay: 400ms;
+  }
+
+  .del-500 {
+    animation-delay: 500ms;
+  }
+}
+
+/* Sparkle animation */
+@keyframes sparkle {
+
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-sparkle {
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
