@@ -9,7 +9,7 @@ import {
     DrawerTitle,
     DrawerTrigger,
 } from "@/components/ui/drawer";
-import { Plus, Music } from "lucide-react";
+import { Plus, X } from "lucide-react";
 import { SongInput } from "./SongInput";
 import { SongSuggestions } from "./SongSuggestions";
 
@@ -30,8 +30,11 @@ export const SongDrawer = ({ onAddSong }: SongDrawerProps) => {
             </DrawerTrigger>
             <DrawerContent className="max-h-[85vh]">
                 <div className="mx-auto w-full max-w-lg">
-                    <DrawerHeader>
-                        <DrawerTitle className="text-center font-display text-2xl text-foreground">
+                    <DrawerHeader className="relative">
+                        <DrawerClose className="absolute right-4 top-4 rounded-full p-2 hover:bg-secondary transition-colors">
+                            <X className="w-5 h-5 text-muted-foreground" />
+                        </DrawerClose>
+                        <DrawerTitle className="text-center font-display text-2xl text-foreground pt-2">
                             Nova Sugestão
                         </DrawerTitle>
                         <DrawerDescription className="text-center text-muted-foreground">
