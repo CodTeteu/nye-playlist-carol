@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import { Sparkles } from "lucide-react";
 import { SparkleGroup } from "@/components/Sparkle";
 import { ChampagneGlass } from "@/components/ChampagneGlass";
-import { SongInput } from "@/components/SongInput";
-import { SongSuggestions } from "@/components/SongSuggestions";
+import { SongDrawer } from "@/components/SongDrawer";
 import { PlaylistDisplay } from "@/components/PlaylistDisplay";
 import { toast } from "sonner";
 import { supabase, Song } from "@/lib/supabase";
@@ -125,18 +124,8 @@ const Index = () => {
           </p>
         </header>
 
-        {/* Song Input */}
-        <section className="mb-6">
-          <SongInput onAddSong={handleAddSong} />
-        </section>
-
-        {/* Song Suggestions */}
-        <section className="mb-12">
-          <SongSuggestions onSelectSong={handleAddSong} />
-        </section>
-
-        {/* Playlist Display */}
-        <section className="mb-16">
+        {/* Playlist Display - Now Main Content */}
+        <section className="mb-32">
           <PlaylistDisplay
             songs={songs}
             onRemoveSong={handleRemoveSong}
@@ -144,17 +133,12 @@ const Index = () => {
           />
         </section>
 
-        {/* Footer */}
-        <footer className="text-center pb-8">
-          <div className="flex items-center justify-center gap-2 text-gold">
-            <Sparkles className="w-4 h-4" />
-            <span className="font-display text-lg">Feliz Ano Novo!</span>
-            <Sparkles className="w-4 h-4" />
+        {/* Sticky Bottom Bar */}
+        <div className="fixed bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-background via-background to-transparent z-40 pb-safe">
+          <div className="container max-w-lg mx-auto">
+            <SongDrawer onAddSong={handleAddSong} />
           </div>
-          <p className="text-muted-foreground text-sm mt-2">
-            Que venha 2026 com muita música e alegria
-          </p>
-        </footer>
+        </div>
       </div>
     </div>
   );
