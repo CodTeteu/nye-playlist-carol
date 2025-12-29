@@ -3,6 +3,7 @@ import { Sparkles } from "lucide-react";
 import { SparkleGroup } from "@/components/Sparkle";
 import { ChampagneGlass } from "@/components/ChampagneGlass";
 import { SongInput } from "@/components/SongInput";
+import { SongSuggestions } from "@/components/SongSuggestions";
 import { PlaylistDisplay } from "@/components/PlaylistDisplay";
 import { toast } from "sonner";
 import { supabase, Song } from "@/lib/supabase";
@@ -125,8 +126,13 @@ const Index = () => {
         </header>
 
         {/* Song Input */}
-        <section className="mb-12">
+        <section className="mb-6">
           <SongInput onAddSong={handleAddSong} />
+        </section>
+
+        {/* Song Suggestions */}
+        <section className="mb-12">
+          <SongSuggestions onSelectSong={handleAddSong} />
         </section>
 
         {/* Playlist Display */}
