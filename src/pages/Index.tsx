@@ -101,22 +101,22 @@ const Index = () => {
 
       <div className="container mx-auto px-4 py-8 relative z-10">
         {/* Header */}
-        <header className="text-center mb-12">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <ChampagneGlass className="w-8 h-8 animate-float" />
-            <span className="text-gold font-medium tracking-[0.3em] text-sm uppercase">
+        <header className="text-center mb-8 md:mb-12 pt-4 md:pt-0">
+          <div className="flex items-center justify-center gap-2 md:gap-3 mb-2 md:mb-4">
+            <ChampagneGlass className="w-6 h-6 md:w-8 md:h-8 animate-float" />
+            <span className="text-gold font-medium tracking-[0.3em] text-xs md:text-sm uppercase">
               Réveillon
             </span>
-            <ChampagneGlass className="w-8 h-8 animate-float" style={{ animationDelay: '0.5s' }} />
+            <ChampagneGlass className="w-6 h-6 md:w-8 md:h-8 animate-float" style={{ animationDelay: '0.5s' }} />
           </div>
 
-          <h1 className="font-display text-7xl md:text-9xl font-bold text-gradient-gold mb-2 flex items-center justify-center gap-4">
-            <Sparkles className="w-10 h-10 md:w-14 md:h-14 text-gold animate-sparkle" />
+          <h1 className="font-display text-5xl md:text-9xl font-bold text-gradient-gold mb-2 flex items-center justify-center gap-2 md:gap-4">
+            <Sparkles className="w-8 h-8 md:w-14 md:h-14 text-gold animate-sparkle" />
             2026
-            <Sparkles className="w-10 h-10 md:w-14 md:h-14 text-gold animate-sparkle" style={{ animationDelay: '1s' }} />
+            <Sparkles className="w-8 h-8 md:w-14 md:h-14 text-gold animate-sparkle" style={{ animationDelay: '1s' }} />
           </h1>
 
-          <h2 className="font-display text-2xl md:text-3xl text-foreground mb-3">
+          <h2 className="font-display text-xl md:text-3xl text-foreground mb-3 px-4">
             Sugestões de Músicas
           </h2>
 

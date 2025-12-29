@@ -48,7 +48,7 @@ export const PlaylistDisplay = ({ songs, onRemoveSong, isLoading }: PlaylistDisp
             variant="ghost"
             size="icon"
             onClick={() => onRemoveSong(song.id)}
-            className="opacity-0 group-hover:opacity-100 transition-opacity h-8 w-8 text-muted-foreground hover:text-destructive"
+            className="opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity h-8 w-8 text-muted-foreground hover:text-destructive touch-manipulation"
           >
             <X className="w-4 h-4" />
           </Button>
