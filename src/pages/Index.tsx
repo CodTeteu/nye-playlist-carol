@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Sparkles } from "lucide-react";
 import { SparkleGroup } from "@/components/Sparkle";
 import { ChampagneGlass } from "@/components/ChampagneGlass";
-import { SongDrawer } from "@/components/SongDrawer";
+import { SongInput } from "@/components/SongInput";
 import { PlaylistDisplay } from "@/components/PlaylistDisplay";
 import { toast } from "sonner";
 import { supabase, Song } from "@/lib/supabase";
@@ -98,47 +98,41 @@ const Index = () => {
       {/* Background decoration */}
       <SparkleGroup />
 
-      <div className="container mx-auto px-4 py-8 relative z-10">
+      <div className="container mx-auto px-4 py-6 md:py-8 relative z-10">
         {/* Header */}
-        <header className="text-center mb-8 md:mb-12 pt-4 md:pt-0">
+        <header className="text-center mb-8">
           <div className="flex items-center justify-center gap-3 mb-2">
             <ChampagneGlass className="w-8 h-8 md:w-10 md:h-10 animate-float" />
-            <span className="text-gold font-medium tracking-[0.4em] text-sm md:text-base uppercase shadow-gold-glow">
+            <span className="text-gold font-medium tracking-[0.4em] text-sm md:text-base uppercase">
               Réveillon
             </span>
             <ChampagneGlass className="w-8 h-8 md:w-10 md:h-10 animate-float" style={{ animationDelay: '0.5s' }} />
           </div>
 
-          <h1 className="font-display text-7xl md:text-9xl font-bold text-gradient-gold mb-4 flex items-center justify-center gap-3 md:gap-6 drop-shadow-sm">
-            <Sparkles className="w-10 h-10 md:w-16 md:h-16 text-gold animate-sparkle" />
+          <h1 className="font-display text-6xl md:text-9xl font-bold text-gradient-gold mb-3 flex items-center justify-center gap-3 md:gap-6">
+            <Sparkles className="w-8 h-8 md:w-16 md:h-16 text-gold animate-sparkle" />
             2026
-            <Sparkles className="w-10 h-10 md:w-16 md:h-16 text-gold animate-sparkle" style={{ animationDelay: '1s' }} />
+            <Sparkles className="w-8 h-8 md:w-16 md:h-16 text-gold animate-sparkle" style={{ animationDelay: '1s' }} />
           </h1>
 
-          <h2 className="font-display text-xl md:text-3xl text-foreground mb-3 px-4">
-            Sugestões de Músicas
-          </h2>
-
-          <p className="text-muted-foreground max-w-md mx-auto">
-            Ajude a criar a trilha sonora perfeita para nossa virada de ano!
+          <p className="text-muted-foreground max-w-sm mx-auto text-sm md:text-base">
+            Ajude a criar a trilha sonora perfeita para nossa virada!
           </p>
         </header>
 
-        {/* Playlist Display - Now Main Content */}
-        <section className="mb-32">
+        {/* Song Input - Inline */}
+        <section className="mb-8">
+          <SongInput onAddSong={handleAddSong} />
+        </section>
+
+        {/* Playlist Display */}
+        <section className="pb-8">
           <PlaylistDisplay
             songs={songs}
             onRemoveSong={handleRemoveSong}
             isLoading={isLoading}
           />
         </section>
-
-        {/* Sticky Bottom Bar */}
-        <div className="fixed bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-background via-background to-transparent z-40 pb-safe">
-          <div className="container max-w-lg mx-auto">
-            <SongDrawer onAddSong={handleAddSong} />
-          </div>
-        </div>
       </div>
     </div>
   );
